@@ -9,9 +9,21 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import Quests from "./pages/Quests";
+import Leaderboard from "./pages/Leaderboard";
+import Learn from "./pages/Learn";
+import Profile from "./pages/Profile";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+
+const AppLayout = ({ children }: { children: React.ReactNode }) => (
+  <>
+    <Header />
+    {children}
+  </>
+);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -24,12 +36,12 @@ const App = () => (
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={
-              <>
-                <Header />
-                <Dashboard />
-              </>
-            } />
+            <Route path="/dashboard" element={<AppLayout><Dashboard /></AppLayout>} />
+            <Route path="/quests" element={<AppLayout><Quests /></AppLayout>} />
+            <Route path="/leaderboard" element={<AppLayout><Leaderboard /></AppLayout>} />
+            <Route path="/learn" element={<AppLayout><Learn /></AppLayout>} />
+            <Route path="/profile" element={<AppLayout><Profile /></AppLayout>} />
+            <Route path="/admin" element={<AppLayout><Admin /></AppLayout>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
