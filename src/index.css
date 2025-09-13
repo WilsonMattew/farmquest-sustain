@@ -2,41 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* FarmQuest India Design System - Professional Farming Platform */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Background Colors */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
+    --surface: 0 0% 100%;
+    --surface-secondary: 120 5% 97%;
 
+    /* Brand Colors - Farming Theme */
+    --primary: 123 38% 35%; /* Dark Green #2E7D32 */
+    --primary-light: 122 39% 49%; /* Green #4CAF50 */
+    --primary-lighter: 120 35% 63%; /* Light Green #81C784 */
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary Colors */
+    --secondary: 120 5% 96%;
+    --secondary-foreground: 123 38% 35%;
+    --accent: 24 100% 50%; /* Orange #FF6F00 for rewards */
+    --accent-foreground: 0 0% 98%;
+    --info: 207 90% 54%; /* Blue #1976D2 for info */
+    --info-foreground: 0 0% 98%;
+
+    /* Semantic Colors */
+    --success: 122 39% 49%;
+    --success-foreground: 0 0% 98%;
+    --warning: 45 100% 51%;
+    --warning-foreground: 0 0% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* UI Colors */
+    --muted: 120 5% 96%;
+    --muted-foreground: 0 0% 45%;
+    --border: 120 13% 91%;
+    --input: 120 13% 91%;
+    --ring: 123 38% 35%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 0 0% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Spacing & Layout */
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Shadows */
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-button: 0 2px 8px rgba(46, 125, 50, 0.2);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--primary-lighter)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), #FFB74D);
+    --gradient-background: linear-gradient(180deg, hsl(var(--background)), hsl(var(--surface-secondary)));
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 123 38% 35%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 120 5% 96%;
+    --sidebar-accent-foreground: 123 38% 35%;
+    --sidebar-border: 120 13% 91%;
+    --sidebar-ring: 123 38% 35%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +94,49 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode for farming platform */
+    --background: 125 25% 8%;
+    --foreground: 0 0% 95%;
+    --surface: 125 20% 12%;
+    --surface-secondary: 125 15% 10%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --primary: 122 39% 60%;
+    --primary-light: 122 39% 70%;
+    --primary-lighter: 120 35% 80%;
+    --primary-foreground: 125 25% 8%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --secondary: 125 15% 15%;
+    --secondary-foreground: 122 39% 60%;
+    --accent: 24 100% 60%;
+    --accent-foreground: 125 25% 8%;
+    --info: 207 90% 64%;
+    --info-foreground: 125 25% 8%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --success: 122 39% 60%;
+    --success-foreground: 125 25% 8%;
+    --warning: 45 100% 61%;
+    --warning-foreground: 125 25% 8%;
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 125 25% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --muted: 125 15% 15%;
+    --muted-foreground: 0 0% 65%;
+    --border: 125 15% 20%;
+    --input: 125 15% 20%;
+    --ring: 122 39% 60%;
+    --card: 125 20% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 125 20% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 125 25% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 122 39% 60%;
+    --sidebar-primary-foreground: 125 25% 8%;
+    --sidebar-accent: 125 15% 15%;
+    --sidebar-accent-foreground: 122 39% 60%;
+    --sidebar-border: 125 15% 20%;
+    --sidebar-ring: 122 39% 60%;
   }
 }
 
@@ -100,6 +146,141 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* Custom component styles */
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .button-shadow {
+    box-shadow: var(--shadow-button);
+  }
+
+  .hover-shadow {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-shadow:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-background {
+    background: var(--gradient-background);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Quest progress ring */
+  .progress-ring {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+
+  /* Achievement badge glow */
+  .badge-glow {
+    animation: badge-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes badge-glow {
+    from {
+      box-shadow: 0 0 5px rgba(255, 111, 0, 0.5);
+    }
+    to {
+      box-shadow: 0 0 20px rgba(255, 111, 0, 0.8);
+    }
+  }
+
+  /* Confetti animation for achievements */
+  .confetti {
+    animation: confetti 0.8s ease-out;
+  }
+
+  @keyframes confetti {
+    0% {
+      transform: scale(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Pulse for notifications */
+  .pulse-notification {
+    animation: pulse-notification 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-notification {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Farming specific animations */
+  .float-up {
+    animation: float-up 0.6s ease-out;
+  }
+
+  @keyframes float-up {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 }
